@@ -2,7 +2,7 @@
 
 ## About app
 
-This is very sample just to test routing on apache server.
+This is very sample app test routing for SPA applications on apache server.
 
 ## Building images.
 
