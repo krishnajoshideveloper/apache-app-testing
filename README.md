@@ -6,9 +6,9 @@ This is very sample just to test routing on apache server.
 
 ## Building images.
 
-1. build-and-push-v1.bat - This script create image with httpd server with default configuration - no config change. Container spinned with this image would reproduce 404 issue. Please modify the image name & tag as per container registry.
+1. Reproducing Issue - build-and-push-v1.bat - This script create image with httpd server with default configuration - no config change. Container spinned with this image would reproduce 404 issue. Please modify the image name & tag as per container registry.
 
-2. build-and-push-v2.bat - This script create image with httpd server with modified httpd configuration - httpd.conf file is changed. Container spinned with this image would work perfectly for SPA applications. Please modify the image name & tag as per your container registry.
+2. Fixing the issue - build-and-push-v2.bat - This script create image with httpd server with modified httpd configuration - httpd.conf file is changed. Container spinned with this image would work perfectly for SPA applications. Please modify the image name & tag as per your container registry.
 
 ## Fix done in apache server.
 
