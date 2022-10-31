@@ -1,4 +1,4 @@
-# Sample example to Host angular app on apache.
+# Host angular app on apache.
 
 ## About app
 
