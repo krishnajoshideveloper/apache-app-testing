@@ -20,4 +20,4 @@ Require all granted
 FallbackResource /apps/index.html
 </Directory>
 
-Sample httpd.conf file is kept in repository at apache/httpd.conf
+<a href="https://github.com/krishnajoshideveloper/host-angular-app-on-apache-server/blob/master/apache/httpd.conf">Sample httpd.conf file</a>
