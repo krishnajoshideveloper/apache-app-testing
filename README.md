@@ -1,27 +1,23 @@
-# ApacheAppTesting
+# Sample example to Host angular app on apache.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+## About app
 
-## Development server
+This is very sample just to test routing on apache server.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Building images.
 
-## Code scaffolding
+1. build-and-push-v1.bat - This script create image with httpd server with default configuration - no config change. Container spinned with this image would reproduce 404 issue.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. build-and-push-v2.bat - This script create image with httpd server with modified httpd configuration - no config change. Container spinned with this image would work perfectly with apache server.
 
-## Build
+## Fix done in apache server.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+We have to specify FallbackResource for our app. For example we are hosting angular app in apps folder, hence configure directory as below.
+<Directory "/usr/local/apache2/htdocs/apps/">
+Options Indexes FollowSymLinks
+AllowOverride None
+Require all granted
+FallbackResource /apps/index.html
+</Directory>
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Sample httpd.conf file is kept in repository at apache/httpd.conf
