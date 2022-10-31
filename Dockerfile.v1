@@ -1,0 +1,12 @@
+﻿# stage 1
+
+FROM node:alpine AS my-app-build
+WORKDIR /app
+COPY . .
+RUN npm ci && npm run-script build
+
+# stage 2
+FROM httpd:2.4
+COPY --from=my-app-build /app/index.html /usr/local/apache2/htdocs/
+COPY --from=my-app-build /app/dist/apache-app-testing /usr/local/apache2/htdocs/apps/
+EXPOSE 80
